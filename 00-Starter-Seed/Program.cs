@@ -2,6 +2,7 @@
 {
     using System;
     using Nancy.Hosting.Self;
+    using Nancy;
 
     internal class Program
     {
@@ -10,7 +11,10 @@
             var uri =
                 new Uri("http://localhost:3579");
 
-            using (var host = new NancyHost(uri))
+            HostConfiguration hostConfigs = new HostConfiguration();
+            hostConfigs.UrlReservations.CreateAutomatically = true;
+
+            using (var host = new NancyHost(uri, new Bootstrapper(), hostConfigs))
             {
                 host.Start();
 
