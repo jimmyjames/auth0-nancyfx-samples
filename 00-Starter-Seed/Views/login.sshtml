@@ -16,23 +16,18 @@
 </head>
 <body>
 <h2>Login Page</h2>
-<div id="root" style="width: 300px; margin: 0px auto; margin-top: 50px">
-</div>
-<script src="https://cdn.auth0.com/js/lock/10.14/lock.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0/8.7/auth0.min.js"></script>
 <script>
-  var lock = new Auth0Lock('@Model.client_id','@Model.domain', {
-    container: 'root',
-    auth: {
-		redirectUrl: 'http://localhost:3579/login-callback',
-		responseType: 'code',
-		params: {
-			scope: 'openid name'
-		}
-    }
-  });
+var webAuth = new auth0.WebAuth({
+	domain: '@Model.domain',
+	clientID: '@Model.client_id',
+	redirectUri: 'http://localhost:3579/login-callback',
+	audience: `https://@Model.domain/userinfo`,
+	responseType: 'code',
+	scope: 'openid name'
+});
 
-  lock.show();
+webAuth.authorize();
 </script>
-
 </body>
 </html>
