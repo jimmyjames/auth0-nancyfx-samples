@@ -45,9 +45,8 @@
     <Reference Include="Auth0.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Auth0.Core.4.0.0\lib\netstandard1.1\Auth0.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Auth0.Nancy.SelfHost, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Auth0.NancyFx.SelfHost.1.0.0\lib\net45\Auth0.Nancy.SelfHost.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Auth0.Nancy.SelfHost, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Auth0.NancyFx.SelfHost.2.0.0\lib\net45\Auth0.Nancy.SelfHost.dll</HintPath>
     </Reference>
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
@@ -81,9 +80,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Views\index.sshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Views\login.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Views\securepage.sshtml">
